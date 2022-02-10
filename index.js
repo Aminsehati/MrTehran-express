@@ -6,14 +6,11 @@ const {
 const typeDefs = require('./types')
 const resolvers = require('./resolvers');
 const dotenv = require('dotenv');
-const fs = require('fs')
-const path = require('path')
 const database = require('./config/database');
 const {
     GraphQLUpload,
     graphqlUploadExpress
 } = require("graphql-upload");
-const app = express();
 const {
     ApolloServerPluginLandingPageGraphQLPlayground
 } = require('apollo-server-core');
@@ -22,6 +19,7 @@ database();
 const models = require('./models')
 const cors = require('cors');
 app.use(cors())
+const app = express();
 async function startExpressApolloServer() {
     app.use(graphqlUploadExpress())
     const server = new ApolloServer({
@@ -48,6 +46,9 @@ async function startExpressApolloServer() {
         port
     }, resolve));
     console.log(`🚀 Server ready at ${port}`);
+    return {
+        server
+    }
 }
 app.use(express.static('uploads'))
 startExpressApolloServer();
