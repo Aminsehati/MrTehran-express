@@ -18,8 +18,8 @@ dotenv.config();
 database();
 const models = require('./models')
 const cors = require('cors');
-app.use(cors())
 const app = express();
+app.use(cors())
 async function startExpressApolloServer() {
     app.use(graphqlUploadExpress())
     const server = new ApolloServer({
