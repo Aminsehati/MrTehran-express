@@ -50,6 +50,6 @@ async function startExpressApolloServer() {
         server
     }
 }
-app.use(express.static('uploads'))
+app.use('/uploads', express.static('uploads'))
 startExpressApolloServer();
 module.exports = app;
