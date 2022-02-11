@@ -1,15 +1,17 @@
 const {
     ApolloError
 } = require('apollo-server-express')
-const createActors = async (_, {
-    input
+const deleteActors = async (_, {
+    id
 }, {
     models
 }) => {
     try {
-        return await models.Actor.create(input)
+        return await models.Actor.findOneAndRemove({
+            _id: id
+        })
     } catch (error) {
         throw new ApolloError(error)
     }
 }
-module.exports = createActors
+module.exports = deleteActors

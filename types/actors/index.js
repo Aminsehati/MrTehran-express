@@ -1,10 +1,6 @@
 const {
     gql
 } = require('apollo-server-express')
-
-
-
-
 module.exports = gql `
 type Query {
     getActors: [Actor],
@@ -17,7 +13,8 @@ input createActorInput {
     coverImgUrl:String
 }
 type Mutation {
-    CreateActors(input : createActorInput!) : Actor
+    CreateActors(input : createActorInput!) : Actor,
+    deleteActors(id:ID!):Actor
 }
 type Actor {
     _id:String,
