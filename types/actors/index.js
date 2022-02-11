@@ -8,7 +8,8 @@ const {
 module.exports = gql `
 type Query {
     getActors: [Actor],
-    getActor(id:ID!):Actor
+    getActor(id:ID!):Actor,
+    getActorsCount:Int!
 }
 input createActorInput {
     name:String!,

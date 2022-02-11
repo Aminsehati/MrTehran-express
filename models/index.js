@@ -1,6 +1,10 @@
 const {
     Actor
-} = require('./Actor')
+} = require('./Actor');
+const {
+    playList
+} = require('./playList')
 module.exports = {
-    Actor
+    Actor,
+    playList
 }

@@ -1,4 +1,6 @@
-const Actors = require('./Actors')
+const Actors = require('./Actors');
+const playList = require('./playList')
 module.exports = {
-    ...Actors
+    ...Actors,
+    ...playList
 }
