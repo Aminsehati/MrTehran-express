@@ -33,6 +33,11 @@
   dependencies:
     "xss" "^1.0.8"
 
+"@faker-js/faker@^6.0.0-alpha.6":
+  "integrity" "sha512-+jatKq8wYwOgCpVQ0wE4t9BglS16qJH/Nu4WjPU+ABTywivTY8BCsD1XIZhw9iXDq3t1InyiXmz+R70TcUMbrg=="
+  "resolved" "https://registry.npmjs.org/@faker-js/faker/-/faker-6.0.0-alpha.6.tgz"
+  "version" "6.0.0-alpha.6"
+
 "@graphql-tools/merge@^8.2.1":
   "integrity" "sha512-2DyqhIOMUMKbCPqo8p6xSdll2OBcBxGdOrxlJJlFQvinsSaYqp/ct3dhAxNtzaIcvSVgXvttQqfD7O2ziFtE7Q=="
   "resolved" "https://registry.npmjs.org/@graphql-tools/merge/-/merge-8.2.2.tgz"
