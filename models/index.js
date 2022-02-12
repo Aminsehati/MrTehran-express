@@ -3,8 +3,12 @@ const {
 } = require('./Actor');
 const {
     playList
-} = require('./playList')
+} = require('./playList');
+const {
+    track
+} = require('./track')
 module.exports = {
     Actor,
-    playList
+    playList,
+    track
 }
