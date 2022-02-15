@@ -14,7 +14,7 @@ type Track {
     audioUrl:String,
     trackName:String,
     actors:[Actor],
-    view:Number
+    view:Int
 }
 input getTracksInput {
     actorID:ID,
