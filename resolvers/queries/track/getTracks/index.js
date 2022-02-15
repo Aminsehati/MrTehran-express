@@ -7,10 +7,15 @@ const getTracks = async (_, {
     models
 }) => {
     try {
-        let actorID = input ?.actorID
-        return await models.track.find(actorID && {
-            actorID
+        let actorID = input ?.actorID;
+        const trackItem = await models.track.find(actorID && {
+            actors: {
+                $elemMatch: {
+                    _id: actorID
+                }
+            }
         });
+        return trackItem
     } catch (error) {
         throw new ApolloError(error)
     }
