@@ -16,16 +16,30 @@ const trackSchema = new Schema({
         type: String,
         required: true
     },
-    actorID: {
-        type: Schema.Types.ObjectId,
-        ref: "Actor"
+    view: {
+        type: Number,
+        default:0
     },
-    actorName:{
-        type:String,
-        required:true
-    }
-},{
-    timestamps:true
+    actors: [{
+        _id: {
+            type: Schema.Types.ObjectId,
+            ref: "Actor"
+        },
+        name: {
+            type: String
+        },
+        imgUrl: {
+            type: String,
+        },
+        coverImgUrl: {
+            type: String,
+        },
+        Followers: {
+            type: Number,
+        }
+    }]
+}, {
+    timestamps: true
 })
 const track = model('track', trackSchema);
 module.exports = {

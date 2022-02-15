@@ -8,27 +8,25 @@ const createTrack = async (_, {
 }) => {
     try {
         const {
-            actorID,
-            audioUrl,
-            imgUrl,
-            trackName
-        } = input;
-        const actor = await models.Actor.findOne({
-            _id: input.actorID
-        });
-        await models.track.create({
-            actorID,
             audioUrl,
             imgUrl,
             trackName,
-            actorName: actor.name
+            actors
+        } = input;
+        const actorsItem = await models.Actor.find({
+            _id: actors
         });
-        return {
-            actorID,
+        await models.track.create({
             audioUrl,
             imgUrl,
-            actorName: actor.name,
+            actors:actorsItem,
             trackName
+        });
+        return {
+            audioUrl,
+            imgUrl,
+            trackName,
+            actors:actorsItem
         }
     } catch (error) {
         throw new ApolloError(error)

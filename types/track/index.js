@@ -10,20 +10,20 @@ type Query {
 }
 type Track {
     _id:String,
-    actorID:String,
     imgUrl:String,
     audioUrl:String,
-    actorName:String,
-    trackName:String
+    trackName:String,
+    actors:[Actor],
+    view:Number
 }
 input getTracksInput {
     actorID:ID,
 }
 input createTrackInput {
-    actorID:String!,
     imgUrl:String!,
     audioUrl:String!,
-    trackName:String!
+    trackName:String!,
+    actors:[ID]!,
 }
 type Mutation {
     createTrack(input : createTrackInput!):Track
