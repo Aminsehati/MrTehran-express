@@ -1,3 +1,4 @@
+const { ApolloServerBase } = require('apollo-server-core')
 const {
     gql
 } = require('apollo-server-express')
@@ -26,6 +27,7 @@ input createTrackInput {
     actors:[ID]!,
 }
 type Mutation {
-    createTrack(input : createTrackInput!):Track
+    createTrack(input : createTrackInput!):Track,
+    deleteTrack(id:ID!):Track
 }
 `
