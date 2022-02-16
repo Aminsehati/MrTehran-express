@@ -1,4 +1,3 @@
-const { ApolloServerBase } = require('apollo-server-core')
 const {
     gql
 } = require('apollo-server-express')
