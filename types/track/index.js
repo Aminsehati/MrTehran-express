@@ -2,9 +2,9 @@ const {
     gql
 } = require('apollo-server-express')
 
-
 module.exports = gql `
-type Query {
+    scalar DateTime
+    type Query {
     getTracks(input:getTracksInput):[Track],
     getTrack(id:ID!):Track
 }
@@ -14,6 +14,8 @@ type Track {
     audioUrl:String,
     trackName:String,
     actors:[Actor],
+    createdAt:DateTime,
+    updatedAt:DateTime,
     view:Int
 }
 input getTracksInput {
