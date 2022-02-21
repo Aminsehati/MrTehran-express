@@ -20,6 +20,10 @@ const trackSchema = new Schema({
         type: Number,
         default:0
     },
+    like:{
+        type:Number,
+        default:0
+    },
     actors: [{
         _id: {
             type: Schema.Types.ObjectId,

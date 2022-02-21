@@ -16,7 +16,8 @@ type Track {
     actors:[Actor],
     createdAt:DateTime,
     updatedAt:DateTime,
-    view:Int
+    view:Int,
+    like:Int
 }
 input getTracksInput {
     actorID:ID,
@@ -27,8 +28,16 @@ input createTrackInput {
     trackName:String!,
     actors:[ID]!,
 }
+input likeTrackInput {
+    trackID:ID!,
+}
+input dilikeTrackInput {
+    trackID:ID!,
+}
 type Mutation {
     createTrack(input : createTrackInput!):Track,
-    deleteTrack(id:ID!):Track
+    deleteTrack(id:ID!):Track,
+    likeTrack(input:likeTrackInput!):Track,
+    dislikeTrack(input:dilikeTrackInput!):Track,
 }
 `
