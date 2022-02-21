@@ -7,5 +7,6 @@ type Mutation {
 }
 type User {
     firstName:String,
+    lastName:String,
 }
 `

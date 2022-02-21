@@ -5,8 +5,9 @@ const {
 module.exports = gql `
     scalar DateTime
     type Query {
-    getTracks(input:getTracksInput):[Track],
-    getTrack(id:ID!):Track
+    getTracks(input:getTracksInput , sort:getTracksSort):[Track],
+    getTrack(id:ID!):Track,
+    getTracksCount:Int!
 }
 type Track {
     _id:String,
@@ -33,6 +34,12 @@ input likeTrackInput {
 }
 input dilikeTrackInput {
     trackID:ID!,
+}
+input getTracksSort {
+    like:Int,
+    updatedAt:Int,
+    createdAt:Int,
+    view:Int
 }
 type Mutation {
     createTrack(input : createTrackInput!):Track,
