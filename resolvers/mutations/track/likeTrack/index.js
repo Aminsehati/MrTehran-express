@@ -14,11 +14,15 @@ const likeTrack = async (_, {
         const track = await models.track.findOne({
             _id: trackID
         });
-        return await models.track.findOneAndUpdate({
+        const like = track.like + 1;
+        await models.track.findOneAndUpdate({
             _id: trackID
         }, {
-            like:track.like + 1
-        })
+            like
+        });
+        return await models.track.findOne({
+            _id: trackID
+        });
     } catch (error) {
         throw new ApolloError(error)
     }

@@ -15,11 +15,14 @@ const dislikeTrack = async (_, {
             _id: trackID
         });
         const like = track.like === 0 ? 0 : track.like - 1;
-        return await models.track.findOneAndUpdate({
+        await models.track.findOneAndUpdate({
             _id: trackID
         }, {
             like
-        })
+        });
+        return await models.track.findOne({
+            _id: trackID
+        });
     } catch (error) {
         throw new ApolloError(error)
     }
