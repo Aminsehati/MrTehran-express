@@ -3,17 +3,23 @@ const {
 } = require('apollo-server-express')
 const getTracks = async (_, {
     input,
-    sort
+    sort,
+    pagination
 }, {
     models
 }) => {
     try {
         let actorID = input ?.actorID;
-        const sortItems = {
+        const sortItem = {
             like: sort ?.like,
-            updatedAt:sort?.updatedAt,
-            createdAt:sort?.createdAt,
-            view:sort?.view,
+            updatedAt: sort ?.updatedAt,
+            createdAt: sort ?.createdAt,
+            view: sort ?.view,
+            trackName: sort ?.trackName
+        }
+        const paginationItem = {
+            limit: pagination.limit || 20,
+            skip: (pagination.skip)|| 1,
         }
         const trackItem = await models.track.find(actorID && {
             actors: {
@@ -21,7 +27,7 @@ const getTracks = async (_, {
                     _id: actorID
                 }
             }
-        }).sort(sortItems)
+        }).sort(sortItem).limit(paginationItem.limit).skip(paginationItem.limit * (paginationItem.skip - 1 ))
         return trackItem
     } catch (error) {
         throw new ApolloError(error)
