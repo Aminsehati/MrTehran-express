@@ -1,9 +1,6 @@
 const {
     ApolloError
 } = require('apollo-server-express');
-const {
-    faker
-} = require('@faker-js/faker');
 const createPlayList = async (_, {
     input
 }, {
