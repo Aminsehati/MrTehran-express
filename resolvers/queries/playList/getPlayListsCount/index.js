@@ -1,6 +1,6 @@
 const {
     ApolloError
-} = require('apollo-server-express')
+} = require("apollo-server-express")
 const getPlayListsCount = async (_, {
     id
 }, {

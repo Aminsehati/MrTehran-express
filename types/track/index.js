@@ -1,7 +1,6 @@
 const {
     gql
 } = require('apollo-server-express')
-
 module.exports = gql `
     scalar DateTime
     type Query {
@@ -46,10 +45,14 @@ input Pagination {
     limit:Int,
     skip:Int
 }
+input viewTrackInput {
+    trackID:ID!,
+}
 type Mutation {
     createTrack(input : createTrackInput!):Track,
     deleteTrack(id:ID!):Track,
     likeTrack(input:likeTrackInput!):Track,
     dislikeTrack(input:dilikeTrackInput!):Track,
+    viewTrack(input:viewTrackInput!):Track
 }
 `

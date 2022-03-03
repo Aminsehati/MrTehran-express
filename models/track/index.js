@@ -2,7 +2,6 @@ const {
     model,
     Schema
 } = require('mongoose')
-
 const trackSchema = new Schema({
     imgUrl: {
         type: String,
@@ -18,11 +17,11 @@ const trackSchema = new Schema({
     },
     view: {
         type: Number,
-        default:0
+        default: 0
     },
-    like:{
-        type:Number,
-        default:0
+    like: {
+        type: Number,
+        default: 0
     },
     actors: [{
         _id: {

@@ -1,6 +1,4 @@
-const {
-    ApolloError
-} = require('apollo-server-express')
+const {ApolloError} = require('apollo-server-express')
 const getPlayLists = async (_, {}, {
     models
 }) => {

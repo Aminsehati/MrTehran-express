@@ -2,7 +2,6 @@ const {
     model,
     Schema
 } = require('mongoose')
-
 const playListSchema = new Schema({
     name: {
         type: String,

@@ -1,22 +1,21 @@
-const express = require('express')
-
+const express = require('express');
 const {
     ApolloServer
-} = require('apollo-server-express')
-const typeDefs = require('./types')
+} = require('apollo-server-express');
+const typeDefs = require('./types');
 const resolvers = require('./resolvers');
 const dotenv = require('dotenv');
 const database = require('./config/database');
 const {
     GraphQLUpload,
     graphqlUploadExpress
-} = require("graphql-upload");
+} = require('graphql-upload')
 const {
     ApolloServerPluginLandingPageGraphQLPlayground
-} = require('apollo-server-core');
+} = require('apollo-server-core')
 dotenv.config();
 database();
-const models = require('./models')
+const models = require('./models');
 const cors = require('cors');
 const app = express();
 app.use(cors())

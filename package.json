@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon index.js"
+    "dev": "nodemon --es-module-specifier-resolution=node index.js"
   },
-  "author": "",
+  "author": "Amin Sehati",
   "license": "ISC",
   "dependencies": {
     "@vercel/node": "^1.12.1",

@@ -1,7 +1,6 @@
 const {
     ApolloError
-} = require("apollo-server-express")
-
+} = require('apollo-server-express')
 const getTracksCount = async (_, {}, {
     models
 }) => {

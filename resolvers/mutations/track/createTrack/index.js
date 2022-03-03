@@ -19,14 +19,14 @@ const createTrack = async (_, {
         await models.track.create({
             audioUrl,
             imgUrl,
-            actors:actorsItem,
+            actors: actorsItem,
             trackName
         });
         return {
             audioUrl,
             imgUrl,
             trackName,
-            actors:actorsItem
+            actors: actorsItem
         }
     } catch (error) {
         throw new ApolloError(error)

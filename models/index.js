@@ -6,7 +6,7 @@ const {
 } = require('./playList');
 const {
     track
-} = require('./track')
+} = require('./track');
 module.exports = {
     Actor,
     playList,

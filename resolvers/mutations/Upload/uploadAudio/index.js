@@ -1,8 +1,8 @@
 const {
     ApolloError
 } = require('apollo-server-express')
-const fs = require('fs')
-const path = require('path')
+const fs = require('fs');
+const path = require('path');
 
 const uploadImage = async (_, {
     file

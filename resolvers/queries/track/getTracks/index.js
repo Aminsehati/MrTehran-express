@@ -18,8 +18,8 @@ const getTracks = async (_, {
             trackName: sort ?.trackName
         }
         const paginationItem = {
-            limit: pagination.limit || 20,
-            skip: (pagination.skip)|| 1,
+            limit: pagination ?.limit || 20,
+            skip: pagination ?.skip || 1,
         }
         const trackItem = await models.track.find(actorID && {
             actors: {
@@ -27,9 +27,10 @@ const getTracks = async (_, {
                     _id: actorID
                 }
             }
-        }).sort(sortItem).limit(paginationItem.limit).skip(paginationItem.limit * (paginationItem.skip - 1 ))
+        }).sort(sortItem).limit(paginationItem.limit).skip(paginationItem.limit * (paginationItem.skip - 1));
         return trackItem
     } catch (error) {
+        console.log(error);
         throw new ApolloError(error)
     }
 }
