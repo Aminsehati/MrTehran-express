@@ -14,7 +14,7 @@ const getTracks = async (_, {
             like: sort ?.like,
             updatedAt: sort ?.updatedAt,
             createdAt: sort ?.createdAt,
-            view: sort ?.view,
+            view: sort?.view,
             trackName: sort ?.trackName
         }
         const paginationItem = {
