@@ -9,12 +9,18 @@ type Query {
 }
 input createActorInput {
     name:String!,
-    imgUrl:String,
-    coverImgUrl:String
+    imgUrl:String!,
+    coverImgUrl:String!
+}
+input updateActorsInput {
+    name:String!,
+    imgUrl:String!,
+    coverImgUrl:String!
 }
 type Mutation {
     CreateActors(input : createActorInput!) : Actor,
-    deleteActors(id:ID!):Actor
+    deleteActors(id:ID!):Actor,
+    updateActors(id:ID!,input : updateActorsInput!):Actor
 }
 type Actor {
     _id:String,
