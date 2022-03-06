@@ -19,8 +19,14 @@ input createPlayListInput {
     imgUrl:String!,
     coverImgUrl:String!,
 }
+input updatePlayListInput {
+    name:String!,
+    imgUrl:String!,
+    coverImgUrl:String!,
+}
 type Mutation {
     createPlayList(input : createPlayListInput!) : playList,
-    deletePlayList(id:ID!):playList
+    deletePlayList(id:ID!):playList,
+    updatePlayList(id:ID! , input : updatePlayListInput):playList
 }
 `

@@ -14,9 +14,10 @@ const getTracks = async (_, {
             like: sort ?.like,
             updatedAt: sort ?.updatedAt,
             createdAt: sort ?.createdAt,
-            view: sort?.view,
+            view: 1,
             trackName: sort ?.trackName
         }
+        console.log(sortItem);
         const paginationItem = {
             limit: pagination ?.limit || 20,
             skip: pagination ?.skip || 1,
@@ -27,7 +28,7 @@ const getTracks = async (_, {
                     _id: actorID
                 }
             }
-        }).sort(sortItem).limit(paginationItem.limit).skip(paginationItem.limit * (paginationItem.skip - 1));
+        }).limit(paginationItem.limit).skip(paginationItem.limit * (paginationItem.skip - 1)).sort(sortItem);
         return trackItem
     } catch (error) {
         console.log(error);
