@@ -1,9 +1,17 @@
-const {ApolloError} = require('apollo-server-express')
-const getPlayLists = async (_, {}, {
+const {
+    ApolloError
+} = require('apollo-server-express')
+const getPlayLists = async (_, {
+    pagination
+}, {
     models
 }) => {
     try {
-        return await models.playList.find();
+        const paginationItem = {
+            limit: pagination.limit || 20,
+            skip: pagination.skip || 1
+        }
+        return await models.playList.find().limit(paginationItem.limit).skip(paginationItem.limit * (paginationItem.skip - 1));
     } catch (error) {
         throw new ApolloError(error)
     }

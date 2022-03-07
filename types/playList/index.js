@@ -3,7 +3,7 @@ const {
 } = require('apollo-server-express');
 module.exports = gql `
 type Query {
-    getPlayLists : [playList],
+    getPlayLists(pagination :Pagination) : [playList],
     getPlayList(id:ID) : playList,
     getPlayListsCount:Int!
 }
