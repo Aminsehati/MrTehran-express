@@ -9,11 +9,9 @@ const updatePlayList = async (_, {
     models
 }) => {
     try {
-        return await models.playList.findOneAndUpdate({
+        await models.playList.findOneAndUpdate({
             _id: id
-        }, {
-            input
-        });
+        }, input);
         return await models.playList.findOne({
             _id: id
         })
