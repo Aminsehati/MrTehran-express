@@ -3,7 +3,7 @@ const {
 } = require("apollo-server-express")
 module.exports = gql `
 type Query {
-    getActors: [Actor],
+    getActors(pagination :Pagination): [Actor],
     getActor(id:ID!):Actor,
     getActorsCount:Int!
 }

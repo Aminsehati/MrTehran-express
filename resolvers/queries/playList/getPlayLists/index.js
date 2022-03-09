@@ -8,8 +8,8 @@ const getPlayLists = async (_, {
 }) => {
     try {
         const paginationItem = {
-            limit: pagination.limit || 20,
-            skip: pagination.skip || 1
+            limit: pagination?.limit || 20,
+            skip: pagination?.skip || 1
         }
         return await models.playList.find().limit(paginationItem.limit).skip(paginationItem.limit * (paginationItem.skip - 1));
     } catch (error) {
