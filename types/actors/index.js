@@ -20,7 +20,8 @@ input updateActorsInput {
 type Mutation {
     CreateActors(input : createActorInput!) : Actor,
     deleteActors(id:ID!):Actor,
-    updateActors(id:ID!,input : updateActorsInput!):Actor
+    updateActors(id:ID!,input : updateActorsInput!):Actor,
+    FollowActors(id:ID!):Actor,
 }
 type Actor {
     _id:String,

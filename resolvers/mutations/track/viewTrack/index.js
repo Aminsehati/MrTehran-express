@@ -10,16 +10,13 @@ const viewTrack = async (_, {
         const {
             trackID
         } = input;
-        await models.track.findOneAndUpdate({
+        return await models.track.findOneAndUpdate({
             _id: trackID
         }, {
             $inc: {
                 view: 1
             }
-        })
-        return await models.track.findOne({
-            _id: trackID
-        })
+        },{new:true})
     } catch (error) {
         throw new ApolloError(error)
     }

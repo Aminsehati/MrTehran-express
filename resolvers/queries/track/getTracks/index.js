@@ -17,7 +17,6 @@ const getTracks = async (_, {
             view: 1,
             trackName: sort ?.trackName
         }
-        console.log(sortItem);
         const paginationItem = {
             limit: pagination ?.limit || 20,
             skip: pagination ?.skip || 1,

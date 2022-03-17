@@ -9,12 +9,9 @@ const updatePlayList = async (_, {
     models
 }) => {
     try {
-        await models.playList.findOneAndUpdate({
+        return await models.playList.findOneAndUpdate({
             _id: id
-        }, input);
-        return await models.playList.findOne({
-            _id: id
-        })
+        }, input,{new:true});
     } catch (error) {
         throw new ApolloError(error)
     }

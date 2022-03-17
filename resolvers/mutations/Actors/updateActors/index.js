@@ -9,16 +9,10 @@ const updateActors = async (_, {
     models
 }) => {
     try {
-        console.log(input);
-        console.log(models.Actor);
-        await models.Actor.findOneAndUpdate({
+        return await models.Actor.findOneAndUpdate({
             _id: id
-        }, input);
-        return await models.Actor.findOne({
-            _id: id
-        })
+        }, input,{new:true});
     } catch (error) {
-        console.log(error);
         throw new ApolloError(error)
     }
 }
