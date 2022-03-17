@@ -16,7 +16,7 @@ const viewTrack = async (_, {
             $inc: {
                 view: 1
             }
-        },{new:true})
+        }, { new: true })
     } catch (error) {
         throw new ApolloError(error)
     }

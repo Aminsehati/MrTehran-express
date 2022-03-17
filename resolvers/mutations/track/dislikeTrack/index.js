@@ -1,4 +1,4 @@
-const {ApolloError} = require('apollo-server-express')
+const { ApolloError } = require('apollo-server-express')
 const dislikeTrack = async (_, {
     input
 }, {
@@ -8,11 +8,11 @@ const dislikeTrack = async (_, {
         const {
             trackID
         } = input;
-        return await models.track.findOneAndUpdate({_id:trackID},{
-            $inc:{
-                like:-1
+        return await models.track.findOneAndUpdate({ _id: trackID }, {
+            $inc: {
+                like: -1
             }
-        },{new:true})
+        }, { new: true })
 
     } catch (error) {
         throw new ApolloError(error)

@@ -1,4 +1,4 @@
-const {ApolloError} = require('apollo-server-express')
+const { ApolloError } = require('apollo-server-express')
 const likeTrack = async (_, {
     input
 }, {
@@ -14,7 +14,7 @@ const likeTrack = async (_, {
             $inc: {
                 like: 1
             }
-        },{new:true})
+        }, { new: true })
     } catch (error) {
         throw new ApolloError(error)
     }

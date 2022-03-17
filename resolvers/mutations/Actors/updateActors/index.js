@@ -11,7 +11,7 @@ const updateActors = async (_, {
     try {
         return await models.Actor.findOneAndUpdate({
             _id: id
-        }, input,{new:true});
+        }, input, { new: true });
     } catch (error) {
         throw new ApolloError(error)
     }
